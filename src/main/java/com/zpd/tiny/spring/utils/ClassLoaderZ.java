@@ -1,4 +1,4 @@
-package com.zpd.tiny.utils;
+package com.zpd.tiny.spring.utils;
 
 import java.io.*;
 
