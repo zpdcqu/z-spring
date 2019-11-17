@@ -1,5 +1,7 @@
 package com.zpd.tiny.spring;
 
+import com.zpd.tiny.spring.bean.factory.BeanFactory;
+
 /**
  * 对外暴露接口
  *

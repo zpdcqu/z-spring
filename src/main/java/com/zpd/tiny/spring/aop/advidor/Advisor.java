@@ -7,5 +7,5 @@ package com.zpd.tiny.spring.aop.advidor;
 
 public interface Advisor {
     String getAdviceBeanName();
-    String getExpress();
+    String getExpression();
 }
