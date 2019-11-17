@@ -1,4 +1,4 @@
-package com.zpd.tiny.spring.pointcut;
+package com.zpd.tiny.spring.aop.pointcut;
 
 public interface RegexExpressionPointCut extends PointCut {
 }

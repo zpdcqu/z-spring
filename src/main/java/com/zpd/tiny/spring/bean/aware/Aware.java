@@ -1,4 +1,4 @@
-package com.zpd.tiny.spring.bean;
+package com.zpd.tiny.spring.bean.aware;
 
 /**
  * 注入常用的对象

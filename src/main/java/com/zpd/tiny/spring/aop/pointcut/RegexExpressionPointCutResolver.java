@@ -1,4 +1,4 @@
-package com.zpd.tiny.spring.pointcut;
+package com.zpd.tiny.spring.aop.pointcut;
 
 import java.lang.reflect.Method;
 import java.util.regex.Pattern;

@@ -1,4 +1,4 @@
-package com.zpd.tiny.spring.aop.advice.impl;
+package com.zpd.tiny.spring.aop.advidor.impl;
 
 import com.zpd.tiny.spring.aop.advidor.PointCutAdvisor;
 

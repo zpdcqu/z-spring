@@ -1,5 +1,7 @@
 package com.zpd.tiny.spring.bean.factory;
 
+import com.zpd.tiny.spring.bean.postprocessor.AopPostProcessor;
+
 import java.util.Map;
 
 /**
@@ -37,5 +39,7 @@ public interface BeanFactory {
      * @return
      */
     Map<String,Object> getBeansByType(Class<?> clazz);
+
+    Class getType(String beanName);
 
 }
