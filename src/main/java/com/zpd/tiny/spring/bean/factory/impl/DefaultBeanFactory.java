@@ -23,7 +23,7 @@ public class DefaultBeanFactory implements BeanFactory,BeanDefinition {
 
 
 
-    private Map<String, BeanDefinition> bdMap = new ConcurrentHashMap<>(;
+    private Map<String, BeanDefinition> bdMap = new ConcurrentHashMap<>();
 
     private Map<String,Object> beanMap = new ConcurrentHashMap<>();
 
@@ -57,7 +57,7 @@ public class DefaultBeanFactory implements BeanFactory,BeanDefinition {
     @Override
     public Class getType(String beanName) {
         Object o = beanMap.get(beanName);
-        return o.getBeanClass();
+        return o.getClass();
     }
 
     @Override

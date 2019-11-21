@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * bean定义接口
+ * bean定义接口,提供创建bean的信息
  * @author ZhengPeidong
  * @date 2019年 11月17日 21:18:15
  */
@@ -47,11 +47,22 @@ public interface BeanDefinition {
 
     List<?> getContructorArg();
 
-    Constructor<?> getConsructor();
+    Constructor<?> getConstructor();
 
     void setContructor(Constructor<?> contructor);
 
     Method getFactoryMethod(Method factoryMethod);
+
+    List<?> getConstouctorArg();
+
+
+    //
+    Constructor<?> getContructor();
+    void setConstructor(Constructor<?> constructor);
+    Method getFactoryMethod();
+    void setFactoryMethod(Method factoryMethod);
+
+    Map<String,Object> getPropertyKeyVale();
 
     void setProperyKeyValue(Map<String,Object> properties);
 }
