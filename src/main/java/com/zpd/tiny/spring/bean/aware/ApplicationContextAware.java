@@ -1,6 +1,6 @@
 package com.zpd.tiny.spring.bean.aware;
 
-import com.zpd.tiny.spring.ApplicationContext;
+import com.zpd.tiny.spring.context.app.ApplicationContext;
 
 /**
  * 注入常用的对象

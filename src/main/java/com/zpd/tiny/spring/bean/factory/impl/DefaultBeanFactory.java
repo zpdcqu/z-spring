@@ -31,7 +31,9 @@ public class DefaultBeanFactory implements BeanFactory,BeanDefinition {
 
     private List<AopPostProcessor> aopPostProcessors = new ArrayList<>();
 
+    public DefaultBeanFactory() {
 
+    }
 
     @Override
     public Object getBean(String beanName) {
@@ -111,6 +113,11 @@ public class DefaultBeanFactory implements BeanFactory,BeanDefinition {
     }
 
     @Override
+    public Constructor<?> getConstructor() {
+        return null;
+    }
+
+    @Override
     public Constructor<?> getConsructor() {
         return null;
     }
@@ -122,6 +129,36 @@ public class DefaultBeanFactory implements BeanFactory,BeanDefinition {
 
     @Override
     public Method getFactoryMethod(Method factoryMethod) {
+        return null;
+    }
+
+    @Override
+    public List<?> getConstouctorArg() {
+        return null;
+    }
+
+    @Override
+    public Constructor<?> getContructor() {
+        return null;
+    }
+
+    @Override
+    public void setConstructor(Constructor<?> constructor) {
+
+    }
+
+    @Override
+    public Method getFactoryMethod() {
+        return null;
+    }
+
+    @Override
+    public void setFactoryMethod(Method factoryMethod) {
+
+    }
+
+    @Override
+    public Map<String, Object> getPropertyKeyVale() {
         return null;
     }
 
