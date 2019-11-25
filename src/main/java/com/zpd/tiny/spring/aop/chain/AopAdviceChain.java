@@ -20,21 +20,33 @@ public class AopAdviceChain {
     // 下一个方法
     private Method nextMethod;
 
+    // 方法
     private Method method;
 
+    // 目标
     private Object target;
 
     // 参数
     private Object[] args;
 
+    // 代理
     private Object proxy;
 
+    // 通知
     private List<Advice> advices;
 
     //通知索引，记录执行到多少个advice
     private int index = 0;
 
 
+    /**
+     * 构造函数
+     * @param method 方法
+     * @param target 目标
+     * @param args   入参
+     * @param proxy  代理
+     * @param advices通知
+     */
     public AopAdviceChain(Method method, Object target, Object[] args, Object proxy, List<Advice> advices) {
 
         try {
@@ -50,6 +62,10 @@ public class AopAdviceChain {
         this.advices = advices;
     }
 
+    /**
+     *  执行
+     * @return
+     */
     public Object invoke(){
         if (index<this.advices.size()){
             Advice advice  = this.advices.get(index++);
@@ -66,11 +82,11 @@ public class AopAdviceChain {
 
                 return res;
             }
+            // 递归
             return this.invoke();
         }else {
             return method.invoke(target,args);
         }
-
 
     }
 }

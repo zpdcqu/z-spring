@@ -7,5 +7,11 @@ import java.lang.reflect.Method;
  */
 public interface BeforeAdvice extends Advice {
 
+    /**
+     *  前置通知
+     * @param method 方法
+     * @param args   入参
+     * @param target 目标
+     */
     void before(Method method,Object[] args,Object target);
 }

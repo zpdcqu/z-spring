@@ -14,6 +14,7 @@ public interface AopFactory {
     AopProxy createAopProxyInstance(Object target, List<Advisor> advisors, BeanFactory beanFactory, String beanName);
 
     /**
+     * 判断是否接口
      * 没有接口使用cglib 有接口使用jdk
      * @param target
      * @return
@@ -23,6 +24,9 @@ public interface AopFactory {
         return interfaces.length > 0;
     }
 
+    /**
+     * 实例化
+     */
     static AopFactory createProxyIinstance(){
         return new GenericAopFactory();
     }

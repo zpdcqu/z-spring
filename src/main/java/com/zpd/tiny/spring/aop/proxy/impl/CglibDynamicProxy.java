@@ -16,6 +16,7 @@ import java.lang.reflect.Method;
 import java.util.List;
 
 /**
+ * cglib代理实现
  * @author ZhengPeidong
  * @date 2019年 11月17日 21:00:12
  */
@@ -24,12 +25,24 @@ public class CglibDynamicProxy implements MethodInterceptor, AopProxy {
 
 //    private static final Log logger = LoggerFactory.getLogger(CglibDynamicProxy.class);
 
+    // 增强
     private Enhancer enhancer = new Enhancer();
+    // 目标
     private Object target;
+    // 通知
     private List<Advisor> advisors;
+    // 被增强bean类名
     private String beanName;
+    // bean工厂
     private BeanFactory beanFactory;
 
+    /**
+     * 构造方法
+     * @param target
+     * @param advisors
+     * @param beanName
+     * @param beanFactory
+     */
     public CglibDynamicProxy(Object target, List<Advisor> advisors, String beanName, BeanFactory beanFactory) {
         this.target = target;
         this.advisors = advisors;
@@ -39,11 +52,17 @@ public class CglibDynamicProxy implements MethodInterceptor, AopProxy {
 
 
 
+    /**
+     * 拦截器
+     */
     @Override
     public Object intercept(Object o, Method method, Object[] objects, MethodProxy methodProxy) throws Throwable {
-        return AopUtils.applyAdvice(target,o,method,objects,,methodProxy);
+        return AopUtils.applyAdvice(target,o,method,objects,methodProxy);
     }
 
+    /**
+     * 获得代理
+     */
     @Override
     public Object getProxy() {
         return getProxy(target.getClass().getClassLoader());
@@ -66,4 +85,5 @@ public class CglibDynamicProxy implements MethodInterceptor, AopProxy {
             )
         }
     }
+}
 
