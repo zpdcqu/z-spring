@@ -1,5 +1,7 @@
 package com.zpd.tiny.spring.mvc.controller;
 
+import com.zpd.tiny.spring.mvc.model.ModelAndView;
+
 import javax.servlet.http.HttpServletRequest;
 
 /**
@@ -8,5 +10,5 @@ import javax.servlet.http.HttpServletRequest;
  */
 
 public interface Controller {
-    ModelAndView handlerRequest(HttpServletRequest request, HttpServletRequest)
+    ModelAndView handlerRequest(HttpServletRequest request, HttpServletRequest response);
 }
